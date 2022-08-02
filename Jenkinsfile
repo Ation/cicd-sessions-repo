@@ -11,7 +11,7 @@ pipeline {
         stage('Checkout Stage') {
             steps {
                 git branch: 'main',
-                url: 'https://github.com/ochirkov/cicd-sessions-repo.git'
+                url: 'https://github.com/Ation/cicd-sessions-repo.git'
             }
         }
 
