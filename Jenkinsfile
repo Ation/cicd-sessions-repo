@@ -1,6 +1,10 @@
 pipeline {
     
     agent any
+    
+    parameters {
+        string(name: 'BRANCH', defaultValue: 'master', description: 'Branch to build')
+    }
 
     options {
         timestamps ()
@@ -10,7 +14,7 @@ pipeline {
 
         stage('Checkout Stage') {
             steps {
-                git branch: 'main',
+                git branch: '${params.BRANCH}',
                 url: 'https://github.com/Ation/cicd-sessions-repo.git'
             }
         }
